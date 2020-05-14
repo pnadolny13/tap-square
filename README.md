@@ -18,7 +18,7 @@ Here is an example of basic config file containing the suare connection credenti
 ```
 {
   "host":"https://connect.squareup.com/",
-  "access_token": "EAAAECSSMwBOsBidYdffgfffgD2pgOF7TqcH"
+  "access_token": "EAAAECSSMwBOsBidYdffsghjjjjS"
 }
 ```
 
