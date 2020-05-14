@@ -1,0 +1,38 @@
+{
+   "type":"object",
+	"additionalProperties": false,
+    "selected": false,
+    "custom_arguments":{},
+	"api":"v2/customers/segments",
+   "properties":{
+      "segments":{
+         "type":"array",
+         "items":{
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string"
+               },
+               "name":{
+                  "type":"string"
+               },
+               "created_at":{
+                  "type":"string"
+               },
+               "updated_at":{
+                  "type":"string"
+               }
+            },
+            "required":[
+               "created_at",
+               "id",
+               "name",
+               "updated_at"
+            ]
+         }
+      }
+   },
+   "required":[
+      "segments"
+   ]
+}

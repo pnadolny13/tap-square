@@ -1,0 +1,50 @@
+{
+   "type":"object",
+   "additionalProperties": false,
+   "custom_arguments":{},
+   "selected": false,
+   "api":"v2/labor/employee-wages",
+   "properties":{
+      "employee_wages":{
+         "type":"array",
+         "items":{
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string"
+               },
+               "employee_id":{
+                  "type":"string"
+               },
+               "title":{
+                  "type":"string"
+               },
+               "hourly_rate":{
+                  "type":"object",
+                  "properties":{
+                     "amount":{
+                        "type":"integer"
+                     },
+                     "currency":{
+                        "type":"string"
+                     }
+                  },
+                  "required":[
+                     "amount",
+                     "currency"
+                  ]
+               }
+            },
+            "required":[
+               "employee_id",
+               "hourly_rate",
+               "id",
+               "title"
+            ]
+         }
+      }
+   },
+   "required":[
+      "employee_wages"
+   ]
+}

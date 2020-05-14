@@ -1,0 +1,53 @@
+{
+   "type":"object",
+   "additionalProperties": false,
+   "custom_arguments":{},
+   "selected": false,
+   "api":"v2/employees",
+   "properties":{
+      "employees":{
+         "type":"array",
+         "items":{
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string"
+               },
+               "location_ids":{
+                  "type":"array",
+                  "items":{
+                     "type":"string"
+                  }
+               },
+               "status":{
+                  "type":"string"
+               },
+               "created_at":{
+                  "type":"string"
+               },
+               "updated_at":{
+                  "type":"string"
+               },
+               "email":{
+                  "type":"string"
+               },
+               "is_owner":{
+                  "type":"string"
+               }
+            },
+            "required":[
+               "created_at",
+               "email",
+               "id",
+               "is_owner",
+               "location_ids",
+               "status",
+               "updated_at"
+            ]
+         }
+      }
+   },
+   "required":[
+      "employees"
+   ]
+}

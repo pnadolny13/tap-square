@@ -1,0 +1,38 @@
+{
+   "type":"object",
+   "additionalProperties": false,
+   "custom_arguments":{},
+   "selected": false,
+   "api":"v2/customers/groups",
+   "properties":{
+      "groups":{
+         "type":"array",
+         "items":{
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string"
+               },
+               "name":{
+                  "type":"string"
+               },
+               "created_at":{
+                  "type":"string"
+               },
+               "updated_at":{
+                  "type":"string"
+               }
+            },
+            "required":[
+               "created_at",
+               "id",
+               "name",
+               "updated_at"
+            ]
+         }
+      }
+   },
+   "required":[
+      "groups"
+   ]
+}

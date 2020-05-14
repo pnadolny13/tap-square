@@ -1,0 +1,54 @@
+{
+   "type":"object",
+   "additionalProperties": false,
+   "custom_arguments":{},
+   "selected": false,
+   "api":"v2/labor/break-types",
+   "properties":{
+      "break_types":{
+         "type":"array",
+         "items":{
+            "type":"object",
+            "properties":{
+               "id":{
+                  "type":"string"
+               },
+               "location_id":{
+                  "type":"string"
+               },
+               "break_name":{
+                  "type":"string"
+               },
+               "expected_duration":{
+                  "type":"string"
+               },
+               "is_paid":{
+                  "type":"string"
+               },
+               "version":{
+                  "type":"integer"
+               },
+               "created_at":{
+                  "type":"string"
+               },
+               "updated_at":{
+                  "type":"string"
+               }
+            },
+            "required":[
+               "break_name",
+               "created_at",
+               "expected_duration",
+               "id",
+               "is_paid",
+               "location_id",
+               "updated_at",
+               "version"
+            ]
+         }
+      }
+   },
+   "required":[
+      "break_types"
+   ]
+}

@@ -1,0 +1,46 @@
+{
+   "type":"object",
+    "additionalProperties": false,
+    "selected": false,
+    "custom_arguments":{},
+	"api":"v2/inventory/batch-retrieve-counts",
+   "properties":{
+      "counts":{
+         "type":"array",
+         "items":{
+            "type":"object",
+            "properties":{
+               "catalog_object_id":{
+                  "type":"string"
+               },
+               "catalog_object_type":{
+                  "type":"string"
+               },
+               "state":{
+                  "type":"string"
+               },
+               "location_id":{
+                  "type":"string"
+               },
+               "quantity":{
+                  "type":"string"
+               },
+               "calculated_at":{
+                  "type":"string"
+               }
+            },
+            "required":[
+               "calculated_at",
+               "catalog_object_id",
+               "catalog_object_type",
+               "location_id",
+               "quantity",
+               "state"
+            ]
+         }
+      }
+   },
+   "required":[
+      "counts"
+   ]
+}

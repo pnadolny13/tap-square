@@ -1,0 +1,3795 @@
+{
+  "streams": [
+    {
+      "stream": "catalog_category",
+      "tap_stream_id": "catalog_category",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/catalog/list?types=category",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "is_deleted": {
+            "type": "string"
+          },
+          "present_at_all_locations": {
+            "type": "string"
+          },
+          "category_data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        },
+        "required": [
+          "category_data",
+          "id",
+          "is_deleted",
+          "present_at_all_locations",
+          "type",
+          "updated_at",
+          "version"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "updated_at"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "version"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "is_deleted"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "present_at_all_locations"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "category_data"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_discount",
+      "tap_stream_id": "catalog_discount",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/catalog/list?types=discount",
+        "properties": {
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "is_deleted": {
+                  "type": "string"
+                },
+                "catalog_v1_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "catalog_v1_id": {
+                        "type": "string"
+                      },
+                      "location_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "catalog_v1_id",
+                      "location_id"
+                    ]
+                  }
+                },
+                "present_at_all_locations": {
+                  "type": "string"
+                },
+                "present_at_location_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "discount_data": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "discount_type": {
+                      "type": "string"
+                    },
+                    "percentage": {
+                      "type": "string"
+                    },
+                    "modify_tax_basis": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "discount_type",
+                    "modify_tax_basis",
+                    "name",
+                    "percentage"
+                  ]
+                }
+              },
+              "required": [
+                "catalog_v1_ids",
+                "discount_data",
+                "id",
+                "is_deleted",
+                "present_at_all_locations",
+                "present_at_location_ids",
+                "type",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "objects"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "objects"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_image",
+      "tap_stream_id": "catalog_image",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/catalog/list?types=image",
+        "properties": {
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "is_deleted": {
+                  "type": "string"
+                },
+                "present_at_all_locations": {
+                  "type": "string"
+                },
+                "image_data": {
+                  "type": "object",
+                  "properties": {
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "url"
+                  ]
+                },
+                "absent_at_location_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "image_data",
+                "is_deleted",
+                "present_at_all_locations",
+                "type",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "objects"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "objects"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_item",
+      "tap_stream_id": "catalog_item",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {},
+        "api": "v2/catalog/list?types=item",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "is_deleted": {
+            "type": "string"
+          },
+          "present_at_all_locations": {
+            "type": "string"
+          },
+          "image_id": {
+            "type": "string"
+          },
+          "item_data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "label_color": {
+                "type": "string"
+              },
+              "visibility": {
+                "type": "string"
+              },
+              "category_id": {
+                "type": "string"
+              },
+              "tax_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "variations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "id": {
+                      "type": "string"
+                    },
+                    "updated_at": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "integer"
+                    },
+                    "is_deleted": {
+                      "type": "string"
+                    },
+                    "present_at_all_locations": {
+                      "type": "string"
+                    },
+                    "item_variation_data": {
+                      "type": "object",
+                      "properties": {
+                        "item_id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "sku": {
+                          "type": "string"
+                        },
+                        "ordinal": {
+                          "type": "integer"
+                        },
+                        "pricing_type": {
+                          "type": "string"
+                        },
+                        "price_money": {
+                          "type": "object",
+                          "properties": {
+                            "amount": {
+                              "type": "integer"
+                            },
+                            "currency": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "amount",
+                            "currency"
+                          ]
+                        },
+                        "location_overrides": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "location_id": {
+                                "type": "string"
+                              },
+                              "track_inventory": {
+                                "type": "string"
+                              },
+                              "inventory_alert_type": {
+                                "type": "string"
+                              },
+                              "inventory_alert_threshold": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "inventory_alert_threshold",
+                              "inventory_alert_type",
+                              "location_id",
+                              "track_inventory"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "item_id",
+                        "location_overrides",
+                        "name",
+                        "ordinal",
+                        "price_money",
+                        "pricing_type",
+                        "sku"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "is_deleted",
+                    "item_variation_data",
+                    "present_at_all_locations",
+                    "type",
+                    "updated_at",
+                    "version"
+                  ]
+                }
+              },
+              "product_type": {
+                "type": "string"
+              },
+              "skip_modifier_screen": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "category_id",
+              "description",
+              "label_color",
+              "name",
+              "product_type",
+              "skip_modifier_screen",
+              "tax_ids",
+              "variations",
+              "visibility"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "image_id",
+          "is_deleted",
+          "item_data",
+          "present_at_all_locations",
+          "type",
+          "updated_at",
+          "version"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "updated_at"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "version"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "is_deleted"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "present_at_all_locations"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "image_id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "item_data"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_item_variation",
+      "tap_stream_id": "catalog_item_variation",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/catalog/list?types=item_variation",
+        "properties": {
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "is_deleted": {
+                  "type": "string"
+                },
+                "present_at_all_locations": {
+                  "type": "string"
+                },
+                "item_variation_data": {
+                  "type": "object",
+                  "properties": {
+                    "item_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "sku": {
+                      "type": "string"
+                    },
+                    "ordinal": {
+                      "type": "integer"
+                    },
+                    "pricing_type": {
+                      "type": "string"
+                    },
+                    "price_money": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "currency"
+                      ]
+                    },
+                    "location_overrides": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "location_id": {
+                            "type": "string"
+                          },
+                          "track_inventory": {
+                            "type": "string"
+                          },
+                          "inventory_alert_type": {
+                            "type": "string"
+                          },
+                          "inventory_alert_threshold": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "location_id",
+                          "track_inventory"
+                        ]
+                      }
+                    },
+                    "measurement_unit_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "item_id",
+                    "location_overrides",
+                    "name",
+                    "ordinal",
+                    "price_money",
+                    "pricing_type"
+                  ]
+                },
+                "absent_at_location_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "is_deleted",
+                "item_variation_data",
+                "present_at_all_locations",
+                "type",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "objects"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "objects"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_modifier",
+      "tap_stream_id": "catalog_modifier",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/catalog/list?types=modifier",
+        "properties": {
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "is_deleted": {
+                  "type": "string"
+                },
+                "present_at_all_locations": {
+                  "type": "string"
+                },
+                "present_at_location_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "modifier_data": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "price_money": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "currency"
+                      ]
+                    },
+                    "on_by_default": {
+                      "type": "string"
+                    },
+                    "ordinal": {
+                      "type": "integer"
+                    },
+                    "modifier_list_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "modifier_list_id",
+                    "name",
+                    "ordinal",
+                    "price_money"
+                  ]
+                },
+                "catalog_v1_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "catalog_v1_id": {
+                        "type": "string"
+                      },
+                      "location_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "catalog_v1_id",
+                      "location_id"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "is_deleted",
+                "modifier_data",
+                "present_at_all_locations",
+                "present_at_location_ids",
+                "type",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "objects"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "objects"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_modifier_list",
+      "tap_stream_id": "catalog_modifier_list",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/catalog/list?types=modifier_list",
+        "properties": {
+          "objects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "id": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "is_deleted": {
+                  "type": "string"
+                },
+                "present_at_all_locations": {
+                  "type": "string"
+                },
+                "present_at_location_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "modifier_list_data": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "selection_type": {
+                      "type": "string"
+                    },
+                    "modifiers": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          },
+                          "updated_at": {
+                            "type": "string"
+                          },
+                          "version": {
+                            "type": "integer"
+                          },
+                          "is_deleted": {
+                            "type": "string"
+                          },
+                          "present_at_all_locations": {
+                            "type": "string"
+                          },
+                          "present_at_location_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            }
+                          },
+                          "modifier_data": {
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "price_money": {
+                                "type": "object",
+                                "properties": {
+                                  "amount": {
+                                    "type": "integer"
+                                  },
+                                  "currency": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "amount",
+                                  "currency"
+                                ]
+                              },
+                              "on_by_default": {
+                                "type": "string"
+                              },
+                              "ordinal": {
+                                "type": "integer"
+                              },
+                              "modifier_list_id": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "modifier_list_id",
+                              "name",
+                              "ordinal",
+                              "price_money"
+                            ]
+                          },
+                          "catalog_v1_ids": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "catalog_v1_id": {
+                                  "type": "string"
+                                },
+                                "location_id": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "catalog_v1_id",
+                                "location_id"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "is_deleted",
+                          "modifier_data",
+                          "present_at_all_locations",
+                          "present_at_location_ids",
+                          "type",
+                          "updated_at",
+                          "version"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "modifiers",
+                    "name",
+                    "selection_type"
+                  ]
+                },
+                "catalog_v1_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "catalog_v1_id": {
+                        "type": "string"
+                      },
+                      "location_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "catalog_v1_id",
+                      "location_id"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "is_deleted",
+                "modifier_list_data",
+                "present_at_all_locations",
+                "present_at_location_ids",
+                "type",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "objects"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "objects"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "catalog_tax",
+      "tap_stream_id": "catalog_tax",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {},
+        "api": "v2/catalog/list?types=tax",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "version": {
+            "type": "integer"
+          },
+          "is_deleted": {
+            "type": "string"
+          },
+          "present_at_all_locations": {
+            "type": "string"
+          },
+          "tax_data": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "calculation_phase": {
+                "type": "string"
+              },
+              "inclusion_type": {
+                "type": "string"
+              },
+              "percentage": {
+                "type": "string"
+              },
+              "applies_to_custom_amounts": {
+                "type": "string"
+              },
+              "enabled": {
+                "type": "string"
+              },
+              "tax_type_id": {
+                "type": "string"
+              },
+              "tax_type_name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "applies_to_custom_amounts",
+              "calculation_phase",
+              "enabled",
+              "inclusion_type",
+              "name",
+              "percentage",
+              "tax_type_id",
+              "tax_type_name"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "is_deleted",
+          "present_at_all_locations",
+          "tax_data",
+          "type",
+          "updated_at",
+          "version"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "updated_at"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "version"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "is_deleted"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "present_at_all_locations"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "tax_data"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "customer_groups",
+      "tap_stream_id": "customer_groups",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/customers/groups",
+        "properties": {
+          "groups": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "created_at",
+                "id",
+                "name",
+                "updated_at"
+              ]
+            }
+          }
+        },
+        "required": [
+          "groups"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "groups"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "customers_segments",
+      "tap_stream_id": "customers_segments",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {},
+        "api": "v2/customers/segments",
+        "properties": {
+          "segments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "created_at",
+                "id",
+                "name",
+                "updated_at"
+              ]
+            }
+          }
+        },
+        "required": [
+          "segments"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "segments"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "labor_break_types",
+      "tap_stream_id": "labor_break_types",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/labor/break-types",
+        "properties": {
+          "break_types": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "location_id": {
+                  "type": "string"
+                },
+                "break_name": {
+                  "type": "string"
+                },
+                "expected_duration": {
+                  "type": "string"
+                },
+                "is_paid": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "break_name",
+                "created_at",
+                "expected_duration",
+                "id",
+                "is_paid",
+                "location_id",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "break_types"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "break_types"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "labor_employee_wages",
+      "tap_stream_id": "labor_employee_wages",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/labor/employee-wages",
+        "properties": {
+          "employee_wages": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "employee_id": {
+                  "type": "string"
+                },
+                "title": {
+                  "type": "string"
+                },
+                "hourly_rate": {
+                  "type": "object",
+                  "properties": {
+                    "amount": {
+                      "type": "integer"
+                    },
+                    "currency": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "amount",
+                    "currency"
+                  ]
+                }
+              },
+              "required": [
+                "employee_id",
+                "hourly_rate",
+                "id",
+                "title"
+              ]
+            }
+          }
+        },
+        "required": [
+          "employee_wages"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "employee_wages"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "labor_shifts",
+      "tap_stream_id": "labor_shifts",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/labor/shifts/search",
+        "properties": {
+          "shifts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "employee_id": {
+                  "type": "string"
+                },
+                "location_id": {
+                  "type": "string"
+                },
+                "timezone": {
+                  "type": "string"
+                },
+                "start_at": {
+                  "type": "string"
+                },
+                "end_at": {
+                  "type": "string"
+                },
+                "wage": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "hourly_rate": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "currency"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "hourly_rate"
+                  ]
+                },
+                "status": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "breaks": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "start_at": {
+                        "type": "string"
+                      },
+                      "end_at": {
+                        "type": "string"
+                      },
+                      "break_type_id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "expected_duration": {
+                        "type": "string"
+                      },
+                      "is_paid": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "break_type_id",
+                      "end_at",
+                      "expected_duration",
+                      "id",
+                      "is_paid",
+                      "name",
+                      "start_at"
+                    ]
+                  }
+                }
+              },
+              "required": [
+                "created_at",
+                "employee_id",
+                "end_at",
+                "id",
+                "location_id",
+                "start_at",
+                "status",
+                "timezone",
+                "updated_at",
+                "version",
+                "wage"
+              ]
+            }
+          }
+        },
+        "required": [
+          "shifts"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "shifts"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "labor_workweek_configs",
+      "tap_stream_id": "labor_workweek_configs",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/labor/workweek-configs",
+        "properties": {
+          "workweek_configs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "start_of_week": {
+                  "type": "string"
+                },
+                "start_of_day_local_time": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "integer"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "created_at",
+                "id",
+                "start_of_day_local_time",
+                "start_of_week",
+                "updated_at",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "workweek_configs"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "workweek_configs"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "list_customers",
+      "tap_stream_id": "list_customers",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {},
+        "api": "v2/customers",
+        "properties": {
+          "customers": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "given_name": {
+                  "type": "string"
+                },
+                "family_name": {
+                  "type": "string"
+                },
+                "company_name": {
+                  "type": "string"
+                },
+                "email_address": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "address_line_1": {
+                      "type": "string"
+                    },
+                    "address_line_2": {
+                      "type": "string"
+                    },
+                    "locality": {
+                      "type": "string"
+                    },
+                    "administrative_district_level_1": {
+                      "type": "string"
+                    },
+                    "postal_code": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "address_line_1",
+                    "administrative_district_level_1",
+                    "locality",
+                    "postal_code"
+                  ]
+                },
+                "phone_number": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                },
+                "reference_id": {
+                  "type": "string"
+                },
+                "preferences": {
+                  "type": "object",
+                  "properties": {
+                    "email_unsubscribed": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "email_unsubscribed"
+                  ]
+                },
+                "groups": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name"
+                    ]
+                  }
+                },
+                "creation_source": {
+                  "type": "string"
+                },
+                "group_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "segment_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "address",
+                "birthday",
+                "created_at",
+                "creation_source",
+                "email_address",
+                "family_name",
+                "given_name",
+                "group_ids",
+                "groups",
+                "id",
+                "phone_number",
+                "preferences",
+                "updated_at"
+              ]
+            }
+          }
+        },
+        "required": [
+          "customers"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "customers"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "list_employees",
+      "tap_stream_id": "list_employees",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/employees",
+        "properties": {
+          "employees": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "location_ids": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "status": {
+                  "type": "string"
+                },
+                "created_at": {
+                  "type": "string"
+                },
+                "updated_at": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "is_owner": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "created_at",
+                "email",
+                "id",
+                "is_owner",
+                "location_ids",
+                "status",
+                "updated_at"
+              ]
+            }
+          }
+        },
+        "required": [
+          "employees"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "employees"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "list_locations",
+      "tap_stream_id": "list_locations",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/locations",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "address_line_1": {
+                "type": "string"
+              },
+              "address_line_2": {
+                "type": "string"
+              },
+              "locality": {
+                "type": "string"
+              },
+              "administrative_district_level_1": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "address_line_1",
+              "address_line_2",
+              "administrative_district_level_1",
+              "country",
+              "locality",
+              "postal_code"
+            ]
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "merchant_id": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "language_code": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "business_name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "business_hours": {
+            "type": "object",
+            "properties": {
+              "periods": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "day_of_week": {
+                      "type": "string"
+                    },
+                    "start_local_time": {
+                      "type": "string"
+                    },
+                    "end_local_time": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "day_of_week",
+                    "end_local_time",
+                    "start_local_time"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "periods"
+            ]
+          },
+          "business_email": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "latitude",
+              "longitude"
+            ]
+          },
+          "logo_url": {
+            "type": "string"
+          },
+          "pos_background_url": {
+            "type": "string"
+          },
+          "mcc": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "business_email",
+          "business_hours",
+          "business_name",
+          "coordinates",
+          "country",
+          "created_at",
+          "currency",
+          "description",
+          "id",
+          "language_code",
+          "logo_url",
+          "mcc",
+          "merchant_id",
+          "name",
+          "phone_number",
+          "pos_background_url",
+          "status",
+          "timezone",
+          "type"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "name"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "address"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "timezone"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "status"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "created_at"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "merchant_id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "country"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "language_code"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "currency"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "phone_number"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "business_name"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "business_hours"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "business_email"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "description"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "coordinates"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "logo_url"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "pos_background_url"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "mcc"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "merchants",
+      "tap_stream_id": "merchants",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {},
+        "selected": false,
+        "api": "v2/merchants",
+        "properties": {
+          "merchant": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "business_name": {
+                  "type": "string"
+                },
+                "country": {
+                  "type": "string"
+                },
+                "language_code": {
+                  "type": "string"
+                },
+                "currency": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "business_name",
+                "country",
+                "currency",
+                "id",
+                "language_code",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "merchant"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "merchant"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_break_type",
+      "tap_stream_id": "retrieve_break_type",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {
+          "id": []
+        },
+        "selected": false,
+        "api": "v2/labor/break-types/{id}",
+        "properties": {
+          "break_type": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "location_id": {
+                "type": "string"
+              },
+              "break_name": {
+                "type": "string"
+              },
+              "expected_duration": {
+                "type": "string"
+              },
+              "is_paid": {
+                "type": "string"
+              },
+              "version": {
+                "type": "integer"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "break_name",
+              "created_at",
+              "expected_duration",
+              "id",
+              "is_paid",
+              "location_id",
+              "updated_at",
+              "version"
+            ]
+          }
+        },
+        "required": [
+          "break_type"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "break_type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_customer",
+      "tap_stream_id": "retrieve_customer",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {
+          "customer_id": []
+        },
+        "api": "v2/customers/{customer_id}",
+        "properties": {
+          "customer": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "given_name": {
+                "type": "string"
+              },
+              "family_name": {
+                "type": "string"
+              },
+              "company_name": {
+                "type": "string"
+              },
+              "email_address": {
+                "type": "string"
+              },
+              "address": {
+                "type": "object",
+                "properties": {
+                  "address_line_1": {
+                    "type": "string"
+                  },
+                  "address_line_2": {
+                    "type": "string"
+                  },
+                  "locality": {
+                    "type": "string"
+                  },
+                  "administrative_district_level_1": {
+                    "type": "string"
+                  },
+                  "postal_code": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "address_line_1",
+                  "address_line_2",
+                  "administrative_district_level_1",
+                  "locality",
+                  "postal_code"
+                ]
+              },
+              "phone_number": {
+                "type": "string"
+              },
+              "birthday": {
+                "type": "string"
+              },
+              "reference_id": {
+                "type": "string"
+              },
+              "preferences": {
+                "type": "object",
+                "properties": {
+                  "email_unsubscribed": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "email_unsubscribed"
+                ]
+              },
+              "groups": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name"
+                  ]
+                }
+              },
+              "creation_source": {
+                "type": "string"
+              },
+              "group_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "address",
+              "birthday",
+              "company_name",
+              "created_at",
+              "creation_source",
+              "email_address",
+              "family_name",
+              "given_name",
+              "group_ids",
+              "groups",
+              "id",
+              "phone_number",
+              "preferences",
+              "reference_id",
+              "updated_at"
+            ]
+          }
+        },
+        "required": [
+          "customer"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "customer"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_customer_group",
+      "tap_stream_id": "retrieve_customer_group",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {
+          "group_id": []
+        },
+        "api": "v2/customers/groups/{group_id}",
+        "properties": {
+          "group": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "created_at",
+              "id",
+              "name",
+              "updated_at"
+            ]
+          }
+        },
+        "required": [
+          "group"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "group"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_customer_segment",
+      "tap_stream_id": "retrieve_customer_segment",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {
+          "segment_id": []
+        },
+        "api": "v2/customers/segments/{segment_id}",
+        "properties": {
+          "segment": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "created_at",
+              "id",
+              "name",
+              "updated_at"
+            ]
+          }
+        },
+        "required": [
+          "segment"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "updated_at"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "segment"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_employee",
+      "tap_stream_id": "retrieve_employee",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {
+          "id": []
+        },
+        "selected": false,
+        "api": "v2/employees/{id}",
+        "properties": {
+          "employee": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "location_ids": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "status": {
+                "type": "string"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "is_owner": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "created_at",
+              "email",
+              "id",
+              "is_owner",
+              "location_ids",
+              "status",
+              "updated_at"
+            ]
+          }
+        },
+        "required": [
+          "employee"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "employee"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_labor_employee_wages",
+      "tap_stream_id": "retrieve_labor_employee_wages",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {
+          "id": []
+        },
+        "selected": false,
+        "api": "v2/labor/employee-wages/{id}",
+        "properties": {
+          "employee_wage": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "employee_id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "hourly_rate": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "integer"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "amount",
+                  "currency"
+                ]
+              }
+            },
+            "required": [
+              "employee_id",
+              "hourly_rate",
+              "id",
+              "title"
+            ]
+          }
+        },
+        "required": [
+          "employee_wage"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "employee_wage"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_labor_shifts",
+      "tap_stream_id": "retrieve_labor_shifts",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {
+          "id": []
+        },
+        "selected": false,
+        "api": "v2/labor/shifts/{id}",
+        "properties": {
+          "shift": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "employee_id": {
+                "type": "string"
+              },
+              "location_id": {
+                "type": "string"
+              },
+              "timezone": {
+                "type": "string"
+              },
+              "start_at": {
+                "type": "string"
+              },
+              "end_at": {
+                "type": "string"
+              },
+              "wage": {
+                "type": "object",
+                "properties": {
+                  "hourly_rate": {
+                    "type": "object",
+                    "properties": {
+                      "amount": {
+                        "type": "integer"
+                      },
+                      "currency": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "amount",
+                      "currency"
+                    ]
+                  }
+                },
+                "required": [
+                  "hourly_rate"
+                ]
+              },
+              "breaks": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "start_at": {
+                      "type": "string"
+                    },
+                    "end_at": {
+                      "type": "string"
+                    },
+                    "break_type_id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "expected_duration": {
+                      "type": "string"
+                    },
+                    "is_paid": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "break_type_id",
+                    "end_at",
+                    "expected_duration",
+                    "id",
+                    "is_paid",
+                    "name",
+                    "start_at"
+                  ]
+                }
+              },
+              "status": {
+                "type": "string"
+              },
+              "version": {
+                "type": "integer"
+              },
+              "created_at": {
+                "type": "string"
+              },
+              "updated_at": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "breaks",
+              "created_at",
+              "employee_id",
+              "end_at",
+              "id",
+              "location_id",
+              "start_at",
+              "status",
+              "timezone",
+              "updated_at",
+              "version",
+              "wage"
+            ]
+          }
+        },
+        "required": [
+          "shift"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "date_modified"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "shift"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_location",
+      "tap_stream_id": "retrieve_location",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {
+          "location_id": []
+        },
+        "api": "v2/locations/{location_id}",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "object",
+            "properties": {
+              "address_line_1": {
+                "type": "string"
+              },
+              "address_line_2": {
+                "type": "string"
+              },
+              "locality": {
+                "type": "string"
+              },
+              "administrative_district_level_1": {
+                "type": "string"
+              },
+              "postal_code": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "address_line_1",
+              "address_line_2",
+              "administrative_district_level_1",
+              "country",
+              "locality",
+              "postal_code"
+            ]
+          },
+          "timezone": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "created_at": {
+            "type": "string"
+          },
+          "merchant_id": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "language_code": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "phone_number": {
+            "type": "string"
+          },
+          "business_name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "business_hours": {
+            "type": "object",
+            "properties": {
+              "periods": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "day_of_week": {
+                      "type": "string"
+                    },
+                    "start_local_time": {
+                      "type": "string"
+                    },
+                    "end_local_time": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "day_of_week",
+                    "end_local_time",
+                    "start_local_time"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "periods"
+            ]
+          },
+          "business_email": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "coordinates": {
+            "type": "object",
+            "properties": {
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              }
+            },
+            "required": [
+              "latitude",
+              "longitude"
+            ]
+          },
+          "logo_url": {
+            "type": "string"
+          },
+          "pos_background_url": {
+            "type": "string"
+          },
+          "mcc": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "address",
+          "business_email",
+          "business_hours",
+          "business_name",
+          "coordinates",
+          "country",
+          "created_at",
+          "currency",
+          "description",
+          "id",
+          "language_code",
+          "logo_url",
+          "mcc",
+          "merchant_id",
+          "name",
+          "phone_number",
+          "pos_background_url",
+          "status",
+          "timezone",
+          "type"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "name"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "address"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "timezone"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "status"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "created_at"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "merchant_id"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "country"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "language_code"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "currency"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "phone_number"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "business_name"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "type"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "business_hours"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "business_email"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "description"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "coordinates"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "logo_url"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "pos_background_url"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "mcc"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "retrieve_merchants",
+      "tap_stream_id": "retrieve_merchants",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "custom_arguments": {
+          "merchant_id": []
+        },
+        "selected": false,
+        "api": "v2/merchants/{merchant_id}",
+        "properties": {
+          "merchant": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "business_name": {
+                "type": "string"
+              },
+              "country": {
+                "type": "string"
+              },
+              "language_code": {
+                "type": "string"
+              },
+              "currency": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "business_name",
+              "country",
+              "currency",
+              "id",
+              "language_code",
+              "status"
+            ]
+          }
+        },
+        "required": [
+          "merchant"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "merchant"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "inventory_physical_count",
+      "tap_stream_id": "inventory_physical_count",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {},
+        "api": "v2/inventory/batch-retrieve-changes",
+        "properties": {
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "physical_count": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "catalog_object_id": {
+                      "type": "string"
+                    },
+                    "catalog_object_type": {
+                      "type": "string"
+                    },
+                    "state": {
+                      "type": "string"
+                    },
+                    "location_id": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "string"
+                    },
+                    "occurred_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "catalog_object_id",
+                    "catalog_object_type",
+                    "created_at",
+                    "id",
+                    "location_id",
+                    "occurred_at",
+                    "quantity",
+                    "state"
+                  ]
+                }
+              },
+              "required": [
+                "physical_count",
+                "type"
+              ]
+            }
+          }
+        },
+        "required": [
+          "changes"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "changes"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "inventory_adjusment",
+      "tap_stream_id": "inventory_adjusment",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": false,
+        "custom_arguments": {},
+        "api": "v2/inventory/batch-retrieve-changes",
+        "properties": {
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string"
+                },
+                "adjustment": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "from_state": {
+                      "type": "string"
+                    },
+                    "to_state": {
+                      "type": "string"
+                    },
+                    "location_id": {
+                      "type": "string"
+                    },
+                    "catalog_object_id": {
+                      "type": "string"
+                    },
+                    "catalog_object_type": {
+                      "type": "string"
+                    },
+                    "quantity": {
+                      "type": "string"
+                    },
+                    "total_price_money": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "integer"
+                        },
+                        "currency": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "currency"
+                      ]
+                    },
+                    "occurred_at": {
+                      "type": "string"
+                    },
+                    "created_at": {
+                      "type": "string"
+                    },
+                    "transaction_id": {
+                      "type": "string"
+                    },
+                    "refund_id": {
+                      "type": "string"
+                    },
+                    "employee_id": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "catalog_object_id",
+                    "catalog_object_type",
+                    "created_at",
+                    "from_state",
+                    "id",
+                    "location_id",
+                    "occurred_at",
+                    "quantity",
+                    "to_state"
+                  ]
+                }
+              },
+              "required": [
+                "adjustment",
+                "type"
+              ]
+            }
+          }
+        },
+        "required": [
+          "changes"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "changes"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    },
+    {
+      "stream": "inventory_count",
+      "tap_stream_id": "inventory_count",
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "selected": true,
+        "custom_arguments": {},
+        "api": "v2/inventory/batch-retrieve-counts",
+        "properties": {
+          "counts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "catalog_object_id": {
+                  "type": "string"
+                },
+                "catalog_object_type": {
+                  "type": "string"
+                },
+                "state": {
+                  "type": "string"
+                },
+                "location_id": {
+                  "type": "string"
+                },
+                "quantity": {
+                  "type": "string"
+                },
+                "calculated_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "calculated_at",
+                "catalog_object_id",
+                "catalog_object_type",
+                "location_id",
+                "quantity",
+                "state"
+              ]
+            }
+          }
+        },
+        "required": [
+          "counts"
+        ]
+      },
+      "metadata": [
+        {
+          "breadcrumb": [],
+          "metadata": {
+            "forced-replication-method": "FULL_TABLE",
+            "valid-replication-keys": [
+              "catalog_object_id"
+            ],
+            "inclusion": "available"
+          }
+        },
+        {
+          "breadcrumb": [
+            "properties",
+            "counts"
+          ],
+          "metadata": {
+            "inclusion": "available"
+          }
+        }
+      ]
+    }
+  ]
+}
