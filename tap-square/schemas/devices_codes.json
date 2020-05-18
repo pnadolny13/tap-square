@@ -3,9 +3,9 @@
   "additionalProperties": false,
   "selected": false,
   "custom_arguments":{},
-  "api":"v2/customers/segments",
+  "api":"v2/devices/codes",
   "properties":{
-    "segments":{
+    "device_codes":{
       "type":"array",
       "items":{
         "type":"object",
@@ -16,23 +16,43 @@
           "name":{
             "type":"string"
           },
+          "code":{
+            "type":"string"
+          },
+          "product_type":{
+            "type":"string"
+          },
+          "location_id":{
+            "type":"string"
+          },
+          "pair_by":{
+            "type":"string"
+          },
           "created_at":{
             "type":"string"
           },
-          "updated_at":{
+          "status":{
+            "type":"string"
+          },
+          "status_changed_at":{
             "type":"string"
           }
         },
         "required":[
+          "code",
           "created_at",
           "id",
+          "location_id",
           "name",
-          "updated_at"
+          "pair_by",
+          "product_type",
+          "status",
+          "status_changed_at"
         ]
       }
     }
   },
   "required":[
-    "segments"
+    "device_codes"
   ]
 }

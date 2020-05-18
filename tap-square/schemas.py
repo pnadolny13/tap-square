@@ -125,6 +125,50 @@ STREAMS = {
     'inventory_count': {
         'replication_method': 'FULL_TABLE',
         'replication_keys': ['catalog_object_id']
+    },
+    'devices_codes': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['id']
+    },
+    'retrieve_device_code': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['id']
+    },
+    'terminals_checkouts': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['id']
+    },
+    'retrieve_terminal_checkout': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['id']
+    },
+    'list_disputes': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['dispute_id']
+    },
+    'retrieve_disputes': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['dispute_id']
+    },
+    'orders': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['id']
+    },
+    'list_payments': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['updated_at']
+    },
+    'list_refunds': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['updated_at']
+    },
+    'retrieve_payment': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['updated_at']
+    },
+    'retrieve_refund': {
+        'replication_method': 'FULL_TABLE',
+        'replication_keys': ['updated_at']
     }
 }
 
