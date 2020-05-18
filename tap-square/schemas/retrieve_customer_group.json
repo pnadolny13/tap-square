@@ -1,37 +1,37 @@
 {
-   "type":"object",
-   "additionalProperties": false,
-   "selected": false,
-   "custom_arguments":{
-       "group_id":[]
-    },
-   "api":"v2/customers/groups/{group_id}",
-   "properties":{
-      "group":{
-         "type":"object",
-         "properties":{
-            "id":{
-               "type":"string"
-            },
-            "name":{
-               "type":"string"
-            },
-            "created_at":{
-               "type":"string"
-            },
-            "updated_at":{
-               "type":"string"
-            }
-         },
-         "required":[
-            "created_at",
-            "id",
-            "name",
-            "updated_at"
-         ]
-      }
-   },
-   "required":[
-      "group"
-   ]
+  "type":"object",
+  "additionalProperties": false,
+  "selected": false,
+  "custom_arguments":{
+    "group_id":[]
+  },
+  "api":"v2/customers/groups/{group_id}",
+  "properties":{
+    "group":{
+      "type":"object",
+      "properties":{
+        "id":{
+          "type":"string"
+        },
+        "name":{
+          "type":"string"
+        },
+        "created_at":{
+          "type":"string"
+        },
+        "updated_at":{
+          "type":"string"
+        }
+      },
+      "required":[
+        "created_at",
+        "id",
+        "name",
+        "updated_at"
+      ]
+    }
+  },
+  "required":[
+    "group"
+  ]
 }

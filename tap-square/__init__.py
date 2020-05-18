@@ -108,25 +108,16 @@ def get_api_data(token, url, method):
 
     """ Return api data """
 
-    try:
-        header = {"Authorization": "Bearer "+token, "Content-type": "application/json"}
+    header = {"Authorization": "Bearer "+token, "Content-type": "application/json"}
 
-        if method == "post":
-            responses = requests.post(url, headers=header)
-        else:
-            responses = requests.get(url, headers=header)
+    if method == "post":
+        responses = requests.post(url, headers=header)
+    else:
+        responses = requests.get(url, headers=header)
 
-        response = responses.json()
+    responses.raise_for_status()
 
-    except requests.exceptions.Timeout:
-        sys.exit("api timeout")
-    except requests.exceptions.TooManyRedirects:
-        sys.exit("bad url")
-    except requests.exceptions.RequestException as error:
-        # catastrophic error. bail.
-        raise SystemExit(error)
-
-    return response
+    return responses.json()
 
 
 def json_value_to_list(json_data):
@@ -176,22 +167,14 @@ def retrieve_api_data(token, url, method):
 
     """ return the api data """
 
-    try:
+    header = {"Authorization": "Bearer "+token, "Content-type": "application/json"}
 
-        header = {"Authorization": "Bearer "+token, "Content-type": "application/json"}
+    if method == 'get':
+        responses = requests.get(url, headers=header)
+    else:
+        responses = requests.post(url, headers=header)
 
-        if method == 'get':
-            responses = requests.get(url, headers=header)
-        else:
-            responses = requests.post(url, headers=header)
-
-    except requests.exceptions.Timeout:
-        sys.exit("api timeout")
-    except requests.exceptions.TooManyRedirects:
-        sys.exit("bad URL")
-    except requests.exceptions.RequestException as error:
-        # catastrophic error. bail.
-        sys.exit(error)
+    responses.raise_for_status()
 
     return responses.json()
 
@@ -200,17 +183,9 @@ def retrieve_api_json_data(token, url, json_body):
 
     """ return the api data with json as input"""
 
-    try:
-
-        header = {"Authorization": "Bearer "+token, "Content-type": "application/json"}
-        responses = requests.post(url, json=json_body, headers=header)
-    except requests.exceptions.Timeout:
-        sys.exit("api timeout")
-    except requests.exceptions.TooManyRedirects:
-        sys.exit("bad URL")
-    except requests.exceptions.RequestException as error:
-        # catastrophic error. bail.
-        sys.exit(error)
+    header = {"Authorization": "Bearer "+token, "Content-type": "application/json"}
+    responses = requests.post(url, json=json_body, headers=header)
+    responses.raise_for_status()
 
     return responses.json()
 
@@ -346,6 +321,26 @@ def sync_inventory_count(config, _custom_arguments, api):
     return final_rows, schemas, is_sync
 
 
+def sync_orders(config, _custom_arguments, api):
+
+    """ get the orders api data in post method"""
+
+    location_id = get_item_variation_id_location_id(config)[1]
+    json_count = {"location_ids": location_id}
+    url = config['host'] + api
+    response = retrieve_api_json_data(config['access_token'], url, json_count)
+
+    if bool(response):
+        final_rows, schemas = clean_api_data(response)
+        is_sync = True
+    else:
+        final_rows = list()
+        schemas = {}
+        is_sync = False
+
+    return final_rows, schemas, is_sync
+
+
 SYNC_FUNCTIONS = {
     'list_locations': sync_direct_api_get,
     'list_customers': sync_direct_api_get,
@@ -376,7 +371,18 @@ SYNC_FUNCTIONS = {
     'retrieve_employee': sync_retrieve_api_data,
     'inventory_physical_count': sync_inventory_physical,
     'inventory_adjustment': sync_inventory_adjustment,
-    'inventory_count': sync_inventory_count
+    'inventory_count': sync_inventory_count,
+    'devices_codes': sync_direct_api_get,
+    'retrieve_device_code': sync_retrieve_api_data,
+    'terminals_checkouts': sync_direct_api_post,
+    'retrieve_terminal_checkout': sync_retrieve_api_data,
+    'list_disputes': sync_direct_api_get,
+    'retrieve_disputes': sync_retrieve_api_data,
+    'orders': sync_orders,
+    'retrieve_payment': sync_retrieve_api_data,
+    'retrieve_refund': sync_retrieve_api_data,
+    'list_payments': sync_direct_api_get,
+    'list_refunds': sync_direct_api_get
 }
 
 

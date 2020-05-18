@@ -1,53 +1,57 @@
 {
   "type":"object",
   "additionalProperties": false,
+  "selected": false,
   "custom_arguments":{
     "id":[]
   },
-  "selected": false,
-  "api":"v2/labor/break-types/{id}",
+  "api":"v2/devices/codes/{id}",
   "properties":{
-    "break_type":{
+    "device_code":{
       "type":"object",
       "properties":{
         "id":{
           "type":"string"
         },
+        "name":{
+          "type":"string"
+        },
+        "code":{
+          "type":"string"
+        },
+        "product_type":{
+          "type":"string"
+        },
         "location_id":{
           "type":"string"
         },
-        "break_name":{
+        "pair_by":{
           "type":"string"
-        },
-        "expected_duration":{
-          "type":"string"
-        },
-        "is_paid":{
-          "type":"string"
-        },
-        "version":{
-          "type":"integer"
         },
         "created_at":{
           "type":"string"
         },
-        "updated_at":{
+        "status":{
+          "type":"string"
+        },
+        "status_changed_at":{
           "type":"string"
         }
       },
       "required":[
-        "break_name",
+        "code",
         "created_at",
-        "expected_duration",
         "id",
-        "is_paid",
         "location_id",
-        "updated_at",
-        "version"
+        "name",
+        "pair_by",
+        "product_type",
+        "status",
+        "status_changed_at"
       ]
     }
   },
   "required":[
-    "break_type"
+    "device_code"
   ]
 }
