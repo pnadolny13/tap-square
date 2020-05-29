@@ -13,7 +13,7 @@ $ pip install tap-square
 ```
 
 ### Configuration
-Here is an example of basic config file containing the suare connection credentials,e.g.:
+Here is an example of basic config file containing the square connection credentials,e.g.:
 
 ```
 {
@@ -167,7 +167,7 @@ A discovered catalog is output, with a JSON-schema description of each API's.
       ]
     },
 ```
-	
+
 ### Property file Creation
 
 In API selection, `tap-square` consumes the property and looks for API's and fields
@@ -182,7 +182,7 @@ $ tap-square --config config.json --discover > properties.json
 
 Then edit `properties.json` to make selections. In this example we want the
 `list_employees` API & `retrieve_employee`, The list_employee does not need any patameater,
-But the retrieve_employee `custom_arguments` need to be passed to get the desired output. 
+But the retrieve_employee `custom_arguments` need to be passed to get the desired output.
 
 ```json
         {
@@ -323,7 +323,7 @@ But the retrieve_employee `custom_arguments` need to be passed to get the desire
 ### API's Selection on properties.jon file
 
 In properties file mark the required API as ` "selected": true` to retrive the specific API data.
-If we mark ` "selected": false` then that API will not return data. 
+If we mark ` "selected": false` then that API will not return data.
 Some of the API need to be  marked as ` "selected": true` and pass the parameater `custom_arguments` which is mandatary filed to fetch
 the data corespondding to that ID.We can pass multiple `custom_arguments` in the list as mensioned.
 
@@ -372,5 +372,4 @@ We can choose any of the singer target ,according to singer target specification
 
 ### List of Square API"s
 
-List of square API is is available inside [square_API_list.xlsx](square_API_list.xlsx)
-
+List of square API is is available inside [Square_API_list.md](Square_API_list.md)
