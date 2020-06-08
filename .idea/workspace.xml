@@ -2,38 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce2efc4f-59ab-427e-bf51-f85ac93980ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sample_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/sample_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tap-square/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_category.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_category.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_discount.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_discount.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_image.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_image.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_item.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_item.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_item_variation.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_item_variation.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_modifier.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_modifier.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_modifier_list.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_modifier_list.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/catalog_tax.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/catalog_tax.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/customer_groups.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/customer_groups.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/customers_segments.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/customers_segments.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/inventory_adjustment.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/inventory_adjustment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/inventory_count.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/inventory_count.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/inventory_physical_count.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/inventory_physical_count.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/labor_break_types.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/labor_break_types.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/labor_employee_wages.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/labor_employee_wages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/labor_shifts.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/labor_shifts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/labor_workweek_configs.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/labor_workweek_configs.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/list_customers.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/list_customers.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/list_employees.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/list_employees.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/list_locations.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/list_locations.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/merchants.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/merchants.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_break_type.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_break_type.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_customer_group.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_customer_group.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_customer_segment.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_customer_segment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_employee.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_employee.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_labor_employee_wages.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_labor_employee_wages.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_labor_shifts.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_labor_shifts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_location.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_location.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tap-square/schemas/retrieve_merchants.json" beforeDir="false" afterPath="$PROJECT_DIR$/tap-square/schemas/retrieve_merchants.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,20 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tap-square/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="403">
-              <caret line="356" lean-forward="true" selection-start-line="356" selection-end-line="356" />
-              <folding>
-                <element signature="e#58#67#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -67,6 +26,7 @@
       <find>sync_inventory_physical_api_post</find>
       <find>sync_inventory_physical</find>
       <find>sync_inventory_count</find>
+      <find>Catalog</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,13 +35,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tap-square/__init__.py" />
         <option value="$PROJECT_DIR$/tap-square/schemas/retrieve_refund.json" />
         <option value="$PROJECT_DIR$/tap-square/schemas/retrieve_payment.json" />
         <option value="$PROJECT_DIR$/tap-square/schemas/list_payments.json" />
         <option value="$PROJECT_DIR$/tap-square/schemas/catalog_image.json" />
         <option value="$PROJECT_DIR$/tap-square/schemas/inventory_physical_count.json" />
         <option value="$PROJECT_DIR$/tap-square/schemas.py" />
+        <option value="$PROJECT_DIR$/setup.py" />
+        <option value="$PROJECT_DIR$/tap-square/__init__.py" />
       </list>
     </option>
   </component>
@@ -109,12 +70,6 @@
               <item name="tap-square" type="462c0819:PsiDirectoryNode" />
               <item name="tap-square" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="tap-square" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tap-square" type="462c0819:PsiDirectoryNode" />
-              <item name="tap-square" type="462c0819:PsiDirectoryNode" />
-              <item name="schemas" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -130,7 +85,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="H:/clover-tap/V5/tap-clover" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -159,9 +114,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -375,19 +329,29 @@
     <entry file="file://$PROJECT_DIR$/tap-square/schemas/retrieve_customer.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tap-square/schemas.py">
+    <entry file="file://$PROJECT_DIR$/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
+        <state relative-caret-position="347">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tap-square/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="356" lean-forward="true" selection-start-line="356" selection-end-line="356" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="e#58#67#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tap-square/schemas.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="509">
+          <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
+          <folding>
+            <element signature="e#42#51#0" expanded="true" />
           </folding>
         </state>
       </provider>

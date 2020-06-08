@@ -5,14 +5,13 @@
 import os
 import sys
 import json
-import collections
 import requests
 import singer
 from singer import utils
 from singer.schema import Schema
+import pandas as pd
 from genson import SchemaBuilder
 from schemas import get_schemas, STREAMS
-# from singer.catalog import Catalog, CatalogEntry
 
 
 REQUIRED_CONFIG_KEYS = ["host", "access_token"]
@@ -35,50 +34,9 @@ def load_schemas():
     return schemas
 
 
-def get_columns(rows):
-
-    """get common columns for all the rows"""
-
-    columns = []
-    for row in rows:
-        columns = columns + list(row.keys() - columns)
-    return columns
-
-
-def merge_schema(rows, columns):
-
-    """ add the empty values in missing columns for each row """
-
-    new_rows = []
-    for row in rows:
-        for col in columns:
-            if col not in row.keys():
-                row[col] = ''
-            if isinstance(row[col], bool):
-                row[col] = str(row[col]).lower()
-        json_data = json.dumps(row, indent=2, sort_keys=True)
-        new_rows.append(json.loads(json_data))
-    return new_rows
-
-
-def flatten(data, parent_key='', sep='__'):
-
-    """ Return flatte json from nested json """
-
-    items = []
-    collections_abc = collections.abc
-    for key, val in data.items():
-        new_key = parent_key + sep + key if parent_key else key
-        if isinstance(val, collections_abc.MutableMapping):
-            items.extend(flatten(val, new_key, sep=sep).items())
-        else:
-            items.append((new_key, str(val) if isinstance(val, list) else val))
-    return dict(items)
-
-
 def get_json_schemas(json_data):
 
-    """Return the standared json schema for given json"""
+    """Return the standard json schema for given json"""
 
     builder = SchemaBuilder()
     builder.add_schema({"type": "object", "properties": {}})
@@ -92,15 +50,11 @@ def clean_api_data(response):
     """ To maintain same schema in json, flatting and merging the schema for all rows """
 
     key = [*response][0]
-    rows = response[key]
-    flatted_rows = []
-
-    for row in rows:
-        flatted_rows.append(flatten(row))
-
-    columns = get_columns(flatted_rows)
-    final_rows = merge_schema(flatted_rows, columns)
+    data_frame = pd.json_normalize(response[key])
+    df_final = data_frame.fillna('None')
+    final_rows = json.loads(df_final.to_json(orient='records'))
     schemas = get_json_schemas(final_rows)
+
     return final_rows, schemas
 
 
@@ -122,17 +76,17 @@ def get_api_data(token, url, method):
 
 def json_value_to_list(json_data):
 
-    """ Return Json Data in list and the lenth of list """
+    """ Return Json Data in list and the length of list """
 
     key = list(json_data.keys())[0]
     data = json_data[key]
-    lenth_of_list = len(data)
-    return data, lenth_of_list
+    length_of_list = len(data)
+    return data, length_of_list
 
 
 def get_item_variation_id_location_id(config):
 
-    """ Return the itrm_variant id and location id"""
+    """ Return the item_variant id and location id"""
 
     url_item_variant = config['host'] + "v2/catalog/list?types=ITEM_VARIATION"
     url_location = config['host'] + "v2/locations"
@@ -140,15 +94,15 @@ def get_item_variation_id_location_id(config):
     item_variant = get_api_data(config['access_token'], url_item_variant, 'get')
     locations = get_api_data(config['access_token'], url_location, 'get')
 
-    item_variant_data, lenth_of_item = json_value_to_list(item_variant)
-    locations_data, lenth_of_location = json_value_to_list(locations)
+    item_variant_data, length_of_item = json_value_to_list(item_variant)
+    locations_data, length_of_location = json_value_to_list(locations)
 
     item_variant_id = []
-    for item in range(lenth_of_item):
+    for item in range(length_of_item):
         item_variant_id.append(item_variant_data[item]['id'])
 
     location_id = []
-    for location in range(lenth_of_location):
+    for location in range(length_of_location):
         location_id.append(locations_data[location]['id'])
 
     return item_variant_id, location_id
@@ -208,12 +162,11 @@ def sync_retrieve_api_data(config, custom_arguments, api):
             sys.exit("invalid id {} to retrieve api data".format(_id))
         else:
             if bool(row):
-                rows.append(flatten(row))
+                rows.append(row)
 
     if len(rows) > 0:
-        columns = get_columns(rows)
-        final_rows = merge_schema(rows, columns)
-        schemas = get_json_schemas(final_rows[0])
+        response = {'response': rows}
+        final_rows, schemas = clean_api_data(response)
         is_sync = True
     else:
         final_rows = list()
@@ -225,7 +178,7 @@ def sync_retrieve_api_data(config, custom_arguments, api):
 
 def sync_direct_api_get(config, _custom_arguments, api):
 
-    """ get the dirrect api data get method"""
+    """ get the direct api data get method"""
 
     url = config['host'] + api
     response = get_api_data(config['access_token'], url, "get")
@@ -243,7 +196,7 @@ def sync_direct_api_get(config, _custom_arguments, api):
 
 def sync_direct_api_post(config, _custom_arguments, api):
 
-    """ get the dirrect api data post method"""
+    """ get the direct api data post method"""
 
     url = config['host'] + api
     response = get_api_data(config['access_token'], url, "post")

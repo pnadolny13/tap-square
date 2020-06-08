@@ -12,14 +12,14 @@ setup(
     install_requires=[
         "singer-python==5.9.0",
         "requests==2.20.0", 
-        "genson==1.1.0"
+        "genson==1.1.0", 'pandas'
     ],
     entry_points="""
     [console_scripts]
     tap-square=tap-square:main
     """,
     packages=["tap-square"],
-    package_data = {
+    package_data={
         "schemas": ["tap-square/schemas/*.json"]
     },
     include_package_data=True,
