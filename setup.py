@@ -16,7 +16,7 @@ setup(
     ],
     entry_points="""
     [console_scripts]
-    tap-square=tap-square:master
+    tap-square=tap_square:master
     """,
     packages=["tap-square"],
     package_data={
